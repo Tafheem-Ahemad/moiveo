@@ -61,7 +61,7 @@ const ExplorePage = () => {
 				{
 				  data.map((exploreData,index)=>{
 					return(
-					  <Card data={exploreData} key={exploreData.id+"exploreSEction"} media_type={params.explore}/>
+					  <Card data={exploreData} key={exploreData.id+"exploreSection"+index} media_type={params.explore}/>
 					)
 				  })
 				}
