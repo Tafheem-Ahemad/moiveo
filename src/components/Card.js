@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
-function Card({data,index,trending}) {
+function Card({data,index,trending,media_type}) {
 	const imageURL = useSelector((state) => state.moiveoData.imageURL)
-	trending=true;
+	if(data.media_type) media_type=data.media_type
 	
-	// console.log(trending);
 	return (
-	<div className='w-full min-w-[230px] max-w-[230px] h-80 overflow-hidden block rounded relative hover:scale-105 transition-all'>
+	<Link to={"/"+media_type+"/"+data.id} className='w-full min-w-[230px] max-w-[230px] h-80 overflow-hidden block rounded relative hover:scale-105 transition-all'>
 
 			{/* Image insert */}
 			{
@@ -42,7 +42,7 @@ function Card({data,index,trending}) {
 					<p className='bg-black px-1 rounded-full text-xs text-white'>Rating :{Number(data.vote_average).toFixed(1)}</p>
 				</div>
 			</div>
-	</div>
+	</Link>
   )
 }
 
