@@ -10,7 +10,7 @@ import VideoPlay from '../components/VideoPlay'
 
 const DetailsPage = () => {
   const params = useParams()
-  const imageURL = useSelector(state => state.movieoData.imageURL)
+  const imageURL = useSelector(state => state.moiveoData.imageURL)
   const { data } = useFetchDetails(`/${params?.explore}/${params?.id}`)
   const { data :castData} = useFetchDetails(`/${params?.explore}/${params?.id}/credits`)
   const { data : similarData } = useFetch(`/${params?.explore}/${params?.id}/similar`)

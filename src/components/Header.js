@@ -34,8 +34,8 @@ function Header() {
 				{
 					navigation.map((nav,index) => {
 						return (
-							<div >
-                                <NavLink key={nav.label+"header"+index} to={nav.href} className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive ? "text-orange-400" : ""}`}>
+							<div key={nav.label+"header"+index}>
+                                <NavLink to={nav.href} className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive ? "text-orange-400" : ""}`}>
                                     {nav.label}
                                 </NavLink>
                             </div>
