@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
 
 function BannerHome() {
 	const bannerData = useSelector((state) => state.moiveoData.bannerData);
