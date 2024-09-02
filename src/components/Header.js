@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react'
 import logo from '../assets/logo.png'
 import userLogo from '../assets/user.png'
 import { GoSearch } from "react-icons/go";
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { navigation } from '../contents/navigation';
 
 
 
 function Header() {
 
-	const [searchInput,setSearchInput] = useState("");
+    const location = useLocation()
+    const removeSpace = location?.search?.slice(3)?.split("%20")?.join(" ")
+	const [searchInput,setSearchInput] = useState(removeSpace);
     const navigate = useNavigate();
    
     useEffect(()=>{
